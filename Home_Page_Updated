@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StatioShop</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fbf5ff; /* Soft blush */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-bottom: 2px solid #c272f4; /* Pink border */
+}
+
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color:#dec1f3
+}
+
+.search {
+    padding: 5px;
+    width: 250px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* 🔹 Category Buttons */
+.categories {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+}
+
+.categories button {
+    border: 1px solid #c472f4;
+    background: white;
+    color: #9418be;
+}
+
+.hero {
+    margin: 20px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    background: #fbf2fd; 
+    border: 2px dashed #b572f4;
+    color: #8918be;
+}
+
+
+.hero button {
+    margin-top: 15px;
+    padding: 10px 15px;
+}
+
+/* 🔹 Products Section */
+.products {
+    padding: 20px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    background: white;
+    border: 1px solid #eecffb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 22%;
+    padding: 10px;
+    text-align: center;
+}
+
+.image {
+    height:320px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.card button {
+    background: #bc72f4;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Rounded pill style */
+}
+
+button,a {
+    background: #d297e9;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    /* --- UPDATED: Transition for smoothness --- */
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+button:active { 
+    
+    transform: scale(0.9);
+}
+
+button:hover {
+    background: #9418be;
+}
+.button{
+    background:#8918be;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color:white;
+    text-decoration: none;
+}
+img{
+    height:300px;
+    width:300px;
+    
+}
+#pens,#pencils,#files{
+    margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">StatioShop</div>
+
+    <input class="search" type="text" placeholder="Search products...">
+
+    <div class="nav-links">
+        <span class="button" href="#">Home</span>
+        <a href="Cart.html" class="button">Cart(0)</a>
+        <a href="Order Page.html" class="button">Orders</a>
+    </div>
+</div>
+
+<div class="categories">
+    <a href="#">All Items</a>
+    <a href="#notebook">Notebooks</a>
+    <a href="#pens">Pens</a>
+    <a href="#pencils">Pencils</a>
+    <a href="#files">Files</a>
+</div>
+
+<div class="hero">
+    <h2>Welcome to StatioShop!</h2>
+    <button>Shop Now</button>
+</div>
+
+<div class="products">
+    <h3>Featured Products</h3>
+
+    <div class="product-grid" id="notebook">
+        
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSp7UEFSsucvgrW265wTLQpbnRyHL8moKolsj-dxOx3BpiD_2G51OCPyLAOZU5nmy5xKFpcRMp3Eia6XMIBUWkjJFVklFEhjFyhEMxjoAIf0EVV4kUAuMAKMSrQ"></div>
+            <p>Amazon Brand - Solimo Notebooks, Spiral-Bound, Lightweight, Vibrant Colours </p>
+            <p>Price:₹419</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSAvYtlSzeXAdUKC6ZDUlLMoYrkY0047zuvCoBT2himS-wikUz9XUm32wVwoimPvjTfpKOGuB0-bG8oxbLbZc63Rg3qEGZYJBeyYW3Ij7InyGUpJ3HhTpLd"></div>
+            <p>Classmate Pulse Single Subject Spiral Notebook</p>
+            <p>Price:₹258</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTdTs_6NYunlgI8Esnadp136cIqkJL7DvA6JHqD23jYTCJgG6iGEYY1RMj7iDiDytXKTwTZf9hh_-9NXQP9u__qWmcdIP99TBcQVas4UDsygI8iZ43DsGxZYHU"></div>
+            <p>NNAXA Spiral Eco-Friendly Pocket Size Notepad,Blank Notebook Diary for Writing Personal, Students and Office use (Pack of 6)</p>
+            <p>Price:₹299</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQErGvyacvT5Gy0q1HJ1k8djXrOg16BGKgeu4CDF4G5sjH3LrClTcKleX1BAqKaAw-56oYGBQiJ7lkctTfpHldoCqf0-Wtqohe6kUXfgLo1aWT62_lZdUqDdGs"></div>
+            <p>Abc Notebook A4 Notebook Plain 200 Pages</p>
+            <p>Price:₹340</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+    </div>
+     <div class="product-grid" id="pens">
+        
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcReqiIu5WFNy2dtzNs9i-mAV5gAKUhJH6267qsoRU_jrK7twq-Z6mJO8iZ3W9kW5hNXJ5Xw7AP58GhBtP1nxFmZLM6xAwaYJA"></div>
+            <p>FLAIR Move Gel Pen </p>
+            <p>Price:₹100</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT548mOfzB0_a7jPdlPWsuK6IBQnHQuGC-DSvsTp1exSPsIts5YtxwjxBQUlu5qUHftfAoe-CqEcxnNVZf8cpStvE3kLxeC3Q"></div>
+            <p>WIN X-Ten Ball Pens</p>
+            <p>Price:₹240</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRN5LYhtzVDm5beOggEVj1ju-aUGDVJmUXn9vXHCI74GgXeQWQVQE40ZWiNNzto0OuKynNDdDodj_qfax8N1ZB4ZQFUYA-YdCBQGGwnenHcWbnbdfxYjcbl"></div>
+            <p>Hauser XO RT Retractable Ball Pen </p>
+            <p>Price:₹100</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSXfrfzCqeXkXqfZ4OkMo5XCUSmpiHtvYgNP6DH_FsybW_csqjjQuCo5qKeppe_m1cezlak1xRN9zWFgzGZfZvNBrBCW7oDEamEIGAyDhFO"></div>
+            <p>SAMVARDHAN 0.5mm Gel Pens Retractable Quick Dry Ink </p>
+            <p>Price:₹199</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+    </div>
+    <div class="product-grid" id="pencils">
+        
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRMYass8Q4f2dPAPc5lIDmbiNTip7rQDHgNy5rSfTLQVSTDoF5DwHb5twNPTgSncA7p7CRcYPivuAHeDZun8jhNdlpQsD3fzVYSTsyxW3dRiXGa9MkAae6wpw"></div>
+
+            <p>PLUSPOINT 26 Pieces Unicorn Pencils </p>
+            <p>Price:₹295</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQY8QngbY322xRIDWwDzwzVBKgURI9uxIL4SRlqc7549hLcqQJk_XJS1xEP8qOsPNgPy9yL6Wu3CtQWKDx0gaG7Ft0hh06O1UCxvuyG12jdUpxB6LrWNDWWkw"></div>
+
+            <p>Toyshine 12Pc Cartoon Print Mechanical Pencils 2.0Mm With Inbuilt Sharpener</p>
+            <p>Price:₹213</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+            
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTnRxMJ5dzPlQLpWZIXbmAW_E6g94KGfukFgdTtC-AGObFFahGQtCJo_2gB7MxI-xX3ivoszyqIrrxgcqx5BBU_27r6cKGbxw"></div>
+            <p>FunBlast Mechanical Pencils with Sharpener for Kid </p>
+            <p>Price:₹174</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://m.media-amazon.com/images/I/61T81OUHedL.jpg"></div>
+            <p>Umi 6Pcs Inkless Pencils Eternal, Everlasting Pencil with Eraser,Unlimited Writing (Multicolor)</p>
+            <p>Price:₹235</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+            
+        </div>
+
+    </div>
+    <div class="product-grid" id="files">
+        
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSMxU9r8aXoWKct9qtMvtuujCBbVF4JGiSFqjNOalDGNWzjDyuaN2555ojLVOcieYCrtlGUfnL9bx0Eg9RHirEszWE9ol6AvFQxrRWgiEyiFqbBTPhdtQpENwg"></div>
+
+            <p>ECLET Leather Multipurpose Professional File Folders for Certificates, Documents Holder </p>
+            <p>Price:₹171</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRW9g1DAGRbP5E0r2qC6s10kQ9GrBaE0aMRSsSUuBBo2Y65KUsfMr77PSARx8mIDYCVHkNPKcxf61zv67I_Nkysv0IGYcQW"></div>
+
+            <p>A4 6-Pocket Flower File Folder</p>
+            <p>Price:₹189</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRNwdzlOeIeRHncTU6YTa6UyUiTkX5gmbH8p7nF3fRFSGMtL0fTHtz687Y0WEDCExyCNFEJhvCAj3bhk4TKZt85X-JTr5jDAtXhIfNakTGPtT8MD40T2CE"></div>
+            <p>NISUN 5 Pocket Expanding File Folder </p>
+            <p>Price:₹249</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+        <div class="card">
+            <div class="image"><img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQVGffXx6rKzcAnqqrYPxcsTFiaXXofBTrfuO0-cUFVKdeFfbjc9EMf9BgCGdBhUPQCwScBVsdwnDL3jGA8h2u72DXxbqIUvZCy0ht1IXYYytvc_kmcWUQ3_Q"></div>
+            <p>Corslet Certificate Expanding File Folders Documents Large Size A4 Paper Holder Organizer School Office </p>
+            <p>Price:₹373</p>
+            <button>Add to Cart</button>
+            <button>View Details</button>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

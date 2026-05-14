@@ -15,9 +15,9 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div style={{ background: '#fbf5ff', minHeight: '100vh' }}>
-        <Navbar />
-        <p style={{ textAlign: 'center', marginTop: 60, color: '#9418be' }}>Product not found.</p>
+      <div style={{ background: 'radial-gradient(ellipse at 60% 20%, #3b1a6e 0%, #1a0a2e 60%, #0d0618 100%)', minHeight: '100vh' }}>
+      <Navbar />
+      <p style={{ textAlign: 'center', marginTop: 60, color: '#c084fc' }}>Product not found.</p>
       </div>
     )
   }
@@ -29,7 +29,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div style={{ background: '#fbf5ff', minHeight: '100vh', paddingBottom: 50 }}>
+      <div style={{ background: 'radial-gradient(ellipse at 60% 20%, #3b1a6e 0%, #1a0a2e 60%, #0d0618 100%)', minHeight: '100vh', paddingBottom: 50 }}> 
       <Navbar />
 
       <div style={styles.title}>Product Details</div>
@@ -75,25 +75,34 @@ const styles = {
     textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#9418be',
+    color: '#e2c9ff',
     margin: '30px 0',
     textTransform: 'uppercase',
-    letterSpacing: 1,
+    letterSpacing: 2,
+    fontFamily: "'Courier New', Courier, monospace",
+    textShadow: '0 0 20px rgba(192,132,252,0.5)',
   },
   container: {
     display: 'flex',
     gap: 40,
     maxWidth: 1000,
     margin: '0 auto',
-    background: 'white',
+    background: 'rgba(255,255,255,0.06)',
     padding: 30,
-    borderRadius: 15,
-    border: '1px solid #eecffb',
-    boxShadow: '0 4px 15px rgba(188,114,244,0.1)',
+    borderRadius: 16,
+    border: '1px solid rgba(188,114,244,0.2)',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+    backdropFilter: 'blur(10px)',
     flexWrap: 'wrap',
   },
   imageBox: { flex: 1, minWidth: 280 },
-  img: { width: '100%', height: 400, objectFit: 'cover', borderRadius: 10, border: '2px dashed #b572f4' },
+  img: {
+    width: '100%',
+    height: 400,
+    objectFit: 'cover',
+    borderRadius: 12,
+    border: '1px solid rgba(188,114,244,0.3)',
+  },
   details: {
     flex: 1,
     display: 'flex',
@@ -103,31 +112,35 @@ const styles = {
     minWidth: 280,
     fontSize: 16,
     lineHeight: 1.6,
+    color: '#e2d4f0',
   },
-  b: { color: '#9418be' },
+  b: { color: '#c084fc' },
   quantity: { display: 'flex', alignItems: 'center', gap: 10, margin: '20px 0' },
   qtyBtn: {
-    background: '#bc72f4',
+    background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
     color: 'white',
     border: 'none',
     width: 36,
     height: 36,
-    borderRadius: 5,
+    borderRadius: 8,
     cursor: 'pointer',
     fontSize: 18,
     fontWeight: 'bold',
+    boxShadow: '0 2px 10px rgba(168,85,247,0.4)',
     transition: '0.3s',
   },
   qtyInput: {
     width: 50,
     textAlign: 'center',
     padding: 8,
-    border: '1px solid #c272f4',
-    borderRadius: 5,
+    border: '1px solid rgba(188,114,244,0.3)',
+    borderRadius: 8,
     fontSize: 16,
+    background: 'rgba(255,255,255,0.07)',
+    color: '#e2d4f0',
   },
   addBtn: {
-    background: '#bc72f4',
+    background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
     color: 'white',
     border: 'none',
     padding: '15px 30px',
@@ -135,13 +148,14 @@ const styles = {
     fontSize: 18,
     fontWeight: 'bold',
     cursor: 'pointer',
+    boxShadow: '0 4px 20px rgba(168,85,247,0.5)',
     transition: '0.3s',
     marginTop: 10,
   },
   backBtn: {
-    background: 'white',
-    color: '#9418be',
-    border: '1px solid #bc72f4',
+    background: 'transparent',
+    color: '#c084fc',
+    border: '1px solid rgba(192,132,252,0.4)',
     padding: '10px 20px',
     borderRadius: 8,
     cursor: 'pointer',

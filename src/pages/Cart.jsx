@@ -3,6 +3,8 @@ import { useNavigate, Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { useCart } from '../context/CartContext'
 
+const removeSound = new Audio('/faah.mp3')
+
 export default function Cart() {
   const { items, updateQty, removeItem, total } = useCart()
   const navigate = useNavigate()
@@ -41,7 +43,16 @@ export default function Cart() {
                     <b style={{ color: '#c084fc', minWidth: 70, textAlign: 'right' }}>
                       ₹{item.price * item.qty}
                     </b>
-                    <button style={styles.removeBtn} onClick={() => removeItem(item.id)}>✕</button>
+                    <button
+  style={styles.removeBtn}
+  onClick={() => {
+    removeSound.currentTime = 0
+    removeSound.play()
+    removeItem(item.id)
+  }}
+>
+  ✕
+</button>
                   </div>
                 </div>
               ))}

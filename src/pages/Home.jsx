@@ -1,3 +1,4 @@
+
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { products, categories } from '../data/products'
@@ -71,6 +72,43 @@ function HeroAnimation() {
     }} />
   )
 }
+function TypewriterText() {
+  const fullText = "Your one-stop stationery store"
+  const [displayed, setDisplayed] = useState('')
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (index < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayed(prev => prev + fullText[index])
+        setIndex(i => i + 1)
+      }, 55)
+      return () => clearTimeout(timeout)
+    }
+  }, [index])
+
+  return (
+    <p style={{
+      marginTop: 16,
+      color: '#c084fc',
+      letterSpacing: '1px',
+      fontFamily: "'Courier New', Courier, monospace",
+      minHeight: '1.5em',
+    }}>
+      {displayed}
+      <span style={{
+        display: 'inline-block',
+        width: '2px',
+        height: '1em',
+        background: '#c084fc',
+        marginLeft: '2px',
+        verticalAlign: 'middle',
+        animation: 'blink 1s step-end infinite',
+      }} />
+      <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
+    </p>
+  )
+}
 export default function Home() {
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
@@ -120,8 +158,34 @@ export default function Home() {
       <div style={styles.hero}>
         <HeroAnimation />                         
   <div style={{ position: 'relative', zIndex: 1 }}></div>
-        <h2 style={{ color: '#ffffff', fontSize: 28, fontWeight: 700 }}>Welcome to StatioShop!</h2>
-        <p style={{ marginTop: 8, color: '#c084fc' }}>Your one-stop stationery store</p>
+        <style>{`
+  .logo-graphic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    filter: drop-shadow(0 0 8px rgba(180, 160, 255, 0.5));
+    transition: all 0.4s ease-in-out;
+    animation: waveAnimation 8s linear infinite;
+  }
+  @keyframes waveAnimation {
+    0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  }
+  .logo-graphic:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(180, 160, 255, 0.9));
+    animation-play-state: paused;
+  }
+`}</style>
+
+<img
+  src="/Logo.jpeg"
+  alt="StatioShop Logo"
+  className="logo-graphic"
+/>
+<TypewriterText />
         
       </div>
 
@@ -156,20 +220,31 @@ export default function Home() {
 
 function ProductCard({ product, onAddToCart, onViewDetails }) {
   return (
-    <div style={styles.card}>
+    <div
+      style={styles.card}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)'
+        e.currentTarget.style.boxShadow = '0 16px 40px rgba(168,85,247,0.4)'
+        e.currentTarget.style.border = '1px solid rgba(192,132,252,0.5)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'translateY(0) scale(1)'
+        e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.3)'
+        e.currentTarget.style.border = '1px solid rgba(188,114,244,0.2)'
+      }}
+    >
       <div style={styles.imageBox}>
         <img src={product.image} alt={product.name} style={styles.img} />
       </div>
       <p style={styles.productName}>{product.name}</p>
       <p style={styles.price}>Price: ₹{product.price}</p>
-      <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginTop: 'auto',paddingTop:8, }}>
+      <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginTop: 'auto', paddingTop: 8 }}>
         <button style={styles.cardBtn} onClick={onAddToCart}>Add to Cart</button>
         <button style={styles.cardBtn} onClick={onViewDetails}>View Details</button>
       </div>
     </div>
   )
 }
-
 const styles = {
   categories: {
     display: 'flex',
@@ -224,18 +299,20 @@ const styles = {
     marginBottom: 40,
   },
   card: {
-    background: 'rgba(255,255,255,0.06)',
-    border: '1px solid rgba(188,114,244,0.2)',
-    boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
-    backdropFilter: 'blur(10px)',
-    width:220,
-    flexShrink:0,
-    display:'flex',
-    flexDirection:'column',
-    padding: 12,
-    textAlign: 'center',
-    borderRadius: 14,
-  },
+  background: 'rgba(255,255,255,0.06)',
+  border: '1px solid rgba(188,114,244,0.2)',
+  boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+  backdropFilter: 'blur(10px)',
+  width: 220,
+  flexShrink: 0,
+  display: 'flex',
+  flexDirection: 'column',
+  padding: 12,
+  textAlign: 'center',
+  borderRadius: 14,
+  transition: 'transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease',
+  cursor: 'pointer',
+},
   imageBox: { height: 220, overflow: 'hidden', marginBottom: 10, borderBottom: '1px solid rgba(188,114,244,0.15)', borderRadius: 8 },
   img: { width: '100%', height: '100%', objectFit: 'cover' },
   productName: { fontSize: 13, color: '#e2d4f0', margin: '6px 0', lineHeight: 1.4 },
@@ -253,6 +330,8 @@ const styles = {
     transition: '0.3s',
   },
 }
+
+
 
 
 

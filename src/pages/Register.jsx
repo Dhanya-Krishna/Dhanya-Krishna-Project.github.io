@@ -131,7 +131,25 @@ export default function Register() {
         .rp-blob:nth-child(1){ width:500px;height:500px;background:#bc72f4;left:-150px;top:-100px;animation-delay:0s; }
         .rp-blob:nth-child(2){ width:400px;height:400px;background:#7a28c8;right:-100px;bottom:-80px;animation-delay:-5s; }
         .rp-blob:nth-child(3){ width:300px;height:300px;background:#e8a8ff;left:42%;top:45%;animation-delay:-9s; }
-        @keyframes rpBlobDrift { from{transform:translate(0,0) scale(1)} to{transform:translate(40px,30px) scale(1.12)} }
+       .rp-logo-graphic {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  filter: drop-shadow(0 0 12px rgba(180,160,255,0.6));
+  transition: all 0.4s ease-in-out;
+  animation: rpWaveAnimation 8s linear infinite;
+}
+@keyframes rpWaveAnimation {
+  0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+.rp-logo-graphic:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 24px rgba(180,160,255,0.95));
+  animation-play-state: paused;
+}
 
         .rp-float {
           position: fixed; z-index: 1; pointer-events: none;
@@ -299,34 +317,7 @@ export default function Register() {
             animate={{ opacity:1, y:0, rotate:0 }}
             transition={{ delay:.15, type:'spring', stiffness:180, damping:14 }}
           >
-            <motion.svg width="60" height="60" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-              animate={{ rotate:[0,-8,8,-4,4,0] }}
-              transition={{ delay:.6, duration:.8, ease:'easeInOut' }}
-              style={{ filter:'drop-shadow(0 4px 18px rgba(188,114,244,0.55))' }}
-            >
-              <rect x="10" y="8" width="40" height="48" rx="5" fill="url(#rpLogoGrad)" />
-              <rect x="10" y="8" width="8" height="48" rx="4" fill="rgba(0,0,0,0.18)" />
-              {[16,24,32,40,48].map((cy,i) => <circle key={i} cx="14" cy={cy} r="3" fill="#fff" opacity="0.7" />)}
-              <rect x="24" y="20" width="20" height="2.5" rx="1.2" fill="rgba(255,255,255,0.45)" />
-              <rect x="24" y="27" width="16" height="2.5" rx="1.2" fill="rgba(255,255,255,0.35)" />
-              <rect x="24" y="34" width="18" height="2.5" rx="1.2" fill="rgba(255,255,255,0.35)" />
-              <motion.g
-                animate={{ rotate:[0,12,-6,10,0] }}
-                transition={{ delay:.9, duration:.7, ease:'easeInOut' }}
-                style={{ transformOrigin:'48px 44px' }}
-              >
-                <rect x="44" y="30" width="6" height="22" rx="1.5" fill="#f5c842" />
-                <polygon points="44,52 50,52 47,58" fill="#f0a830" />
-                <rect x="44" y="30" width="6" height="4" rx="1" fill="#e8aaaa" />
-                <rect x="44" y="34" width="6" height="2" rx="0" fill="#c0776e" />
-              </motion.g>
-              <defs>
-                <linearGradient id="rpLogoGrad" x1="10" y1="8" x2="50" y2="56" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#d48fff" />
-                  <stop offset="100%" stopColor="#7a28c8" />
-                </linearGradient>
-              </defs>
-            </motion.svg>
+            <img src="/Logo.jpeg" alt="StatioShop Logo" className="rp-logo-graphic" />
             <span className="rp-brand-name">StatioShop</span>
           </motion.div>
 

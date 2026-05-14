@@ -16,10 +16,10 @@ export default function Order() {
 
   if (items.length === 0) {
     return (
-      <div style={{ background: '#fbf5ff', minHeight: '100vh' }}>
+      <div style={{ background: 'radial-gradient(ellipse at 60% 20%, #3b1a6e 0%, #1a0a2e 60%, #0d0618 100%)', minHeight: '100vh' }}>
         <Navbar />
         <div style={{ textAlign: 'center', marginTop: 80 }}>
-          <p style={{ color: '#9418be', fontSize: 18 }}>No active order found.</p>
+          <p style={{ color: '#c084fc', fontSize: 18 }}>No active order found.</p>
           <button style={styles.backBtn} onClick={() => navigate('/home')}>
             ← Go Shopping
           </button>
@@ -29,7 +29,7 @@ export default function Order() {
   }
 
   return (
-    <div style={{ background: '#fbf5ff', minHeight: '100vh', paddingBottom: 40 }}>
+    <div style={{ background: 'radial-gradient(ellipse at 60% 20%, #3b1a6e 0%, #1a0a2e 60%, #0d0618 100%)', minHeight: '100vh', paddingBottom: 40 }}>
       <Navbar />
 
       <div style={styles.container}>
@@ -88,10 +88,10 @@ export default function Order() {
                 <span>Delivery Charges</span>
                 <span style={{ color: '#166534', fontWeight: 600 }}>FREE</span>
               </div>
-              <hr style={{ borderColor: '#eecffb', margin: '12px 0' }} />
+              <hr style={{ borderColor: 'rgba(188,114,244,0.2)', margin: '12px 0' }} />
               <div style={{ ...styles.priceRow, fontWeight: 700, fontSize: 18 }}>
                 <span>Total</span>
-                <span style={{ color: '#9418be' }}>₹{total}</span>
+                <span style={{ color: '#c084fc' }}>₹{total}</span>
               </div>
 
               <button
@@ -110,20 +110,21 @@ export default function Order() {
 
 const styles = {
   container: { maxWidth: 900, margin: '40px auto', padding: '0 15px' },
-  heading: { fontWeight: 'bold', color: '#9418be', marginBottom: 24 },
+  heading: { fontWeight: 'bold', color: '#e2c9ff', marginBottom: 24 },
   row: { display: 'flex', gap: 20, flexWrap: 'wrap' },
   leftCol: { flex: 2, minWidth: 280, display: 'flex', flexDirection: 'column', gap: 20 },
   rightCol: { flex: 1, minWidth: 220 },
   card: {
-    background: 'white',
-    border: '1px solid #eecffb',
-    borderRadius: 12,
-    boxShadow: '0 4px 10px rgba(188,114,244,0.05)',
+    background: 'rgba(255,255,255,0.06)',
+    border: '1px solid rgba(188,114,244,0.2)',
+    borderRadius: 14,
+    boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+    backdropFilter: 'blur(10px)',
     padding: 20,
   },
-  orderHeader: { borderBottom: '1px solid #eecffb', paddingBottom: 12, marginBottom: 16 },
-  orderId: { fontSize: 13, fontWeight: 'bold', color: '#bc72f4' },
-  arrival: { marginTop: 6, color: '#9418be' },
+  orderHeader: { borderBottom: '1px solid rgba(188,114,244,0.2)', paddingBottom: 12, marginBottom: 16 },
+  orderId: { fontSize: 13, fontWeight: 'bold', color: '#c084fc' },
+  arrival: { marginTop: 6, color: '#e2d4f0' },
   orderItem: {
     display: 'flex',
     alignItems: 'center',
@@ -135,40 +136,42 @@ const styles = {
     height: 70,
     objectFit: 'cover',
     borderRadius: 8,
-    border: '1px solid #eecffb',
-    background: '#fbf2fd',
+    border: '1px solid rgba(188,114,244,0.2)',
+    background: 'rgba(255,255,255,0.05)',
   },
-  itemName: { fontSize: 14, fontWeight: 600, color: '#4a1d64', lineHeight: 1.3 },
-  itemTotal: { fontWeight: 'bold', color: '#9418be', minWidth: 60, textAlign: 'right' },
-  trackTitle: { fontWeight: 'bold', color: '#9418be', marginBottom: 16 },
+  itemName: { fontSize: 14, fontWeight: 600, color: '#e2d4f0', lineHeight: 1.3 },
+  itemTotal: { fontWeight: 'bold', color: '#c084fc', minWidth: 60, textAlign: 'right' },
+  trackTitle: { fontWeight: 'bold', color: '#e2c9ff', marginBottom: 16 },
   trackRow: { display: 'flex', justifyContent: 'space-between', textAlign: 'center' },
   trackStep: { flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 },
   dot: { height: 12, width: 12, borderRadius: '50%', display: 'inline-block' },
-  stepActive: { color: '#9418be', fontWeight: 'bold', fontSize: 14 },
-  stepInactive: { color: '#dec1f3', fontSize: 14 },
-  priceTitle: { fontWeight: 'bold', color: '#9418be', marginBottom: 12 },
-  priceRow: { display: 'flex', justifyContent: 'space-between', marginBottom: 10, fontSize: 15 },
+  stepActive: { color: '#c084fc', fontWeight: 'bold', fontSize: 14 },
+  stepInactive: { color: 'rgba(192,132,252,0.3)', fontSize: 14 },
+  priceTitle: { fontWeight: 'bold', color: '#e2c9ff', marginBottom: 12 },
+  priceRow: { display: 'flex', justifyContent: 'space-between', marginBottom: 10, fontSize: 15, color: '#e2d4f0' },
   placeBtn: {
     width: '100%',
     marginTop: 16,
     padding: 12,
-    background: '#bc72f4',
+    background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
     color: 'white',
     border: 'none',
     borderRadius: 8,
     cursor: 'pointer',
     fontSize: 15,
     fontWeight: 600,
+    boxShadow: '0 4px 20px rgba(168,85,247,0.5)',
     transition: '0.3s',
   },
   backBtn: {
     marginTop: 16,
     padding: '10px 20px',
-    background: '#bc72f4',
+    background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
     color: 'white',
     border: 'none',
     borderRadius: 8,
     cursor: 'pointer',
     fontSize: 15,
+    boxShadow: '0 4px 20px rgba(168,85,247,0.5)',
   },
 }

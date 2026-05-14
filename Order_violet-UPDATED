@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - StatioShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #fbf5ff; 
+            color: #4a1d64;
+        }
+        /* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: white;
+    border-bottom: 2px solid #c272f4;
+}
+
+/* Logo */
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #bc72f4;
+}
+
+/* Empty space (instead of search) */
+.nav-spacer {
+    width: 40%;
+}
+
+/* Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #9418be;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Active tab */
+.nav-links a.active {
+    border-bottom: 2px solid #bc72f4;
+    color: #bc72f4;
+}
+
+
+        .order-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+        .card {
+            background: white;
+            border: 1px solid #eecffb;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(188, 114, 244, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        h2, h5, h6 {
+            color: #9418be;
+        }
+
+        .step-active {
+            color: #9418be;
+            font-weight: bold;
+        }
+        .step-dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bc72f4;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .step-inactive {
+            color: #dec1f3;
+        }
+
+        
+
+        .text-success {
+            color: #198754 !important; /* Keep success green for clarity */
+        }
+        
+        hr {
+            border-top: 1px solid #eecffb;
+            opacity: 1;
+        }
+        
+        .img-thumbnail-custom {
+            border: 1px solid #eecffb;
+            border-radius: 8px;
+            padding: 5px;
+            background: #fbf2fd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+    
+    <div class="logo">StatioShop</div>
+
+    <!-- Empty space (no search here) -->
+    <div class="nav-spacer"></div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="cart.html">Cart</a>
+        <a href="order.html" class="active">My Orders</a>
+    </div>
+
+</div>
+    <div class="container order-container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold">Order Summary</h2>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <div class="mb-4 border-bottom pb-3">
+                            <span class="small fw-bold" style="color: #bc72f4;">ORDER ID: #ST-99042</span>
+                            <h5 class="mt-1">Estimated Arrival: Tomorrow, 5 PM</h5>
+                        </div>
+
+                        <div class="row align-items-center mb-4">
+                            <div class="col-3 col-md-2">
+                                <img src="https://via.placeholder.com/80/fbf2fd/9418be?text=Notebook" class="img-fluid img-thumbnail-custom" alt="Notebook">
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <h6 class="mb-0 fw-bold">Classmate Spiral Notebook</h6>
+                                <small class="text-muted">Size: A4 | Qty: 2</small>
+                            </div>
+                            <div class="col-3 text-end">
+                                <span class="fw-bold" style="color: #9418be;">₹360</span>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center mb-2">
+                            <div class="col-3 col-md-2">
+                                <img src="https://via.placeholder.com/80/fbf2fd/9418be?text=Pen" class="img-fluid img-thumbnail-custom" alt="Pens">
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <h6 class="mb-0 fw-bold">Parker Beta Neo Gel Pen</h6>
+                                <small class="text-muted">Color: Blue | Qty: 1</small>
+                            </div>
+                            <div class="col-3 text-end">
+                                <span class="fw-bold" style="color: #9418be;">₹150</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-4">
+                    <h6 class="mb-4 fw-bold">Track Your Delivery</h6>
+                    <div class="d-flex justify-content-between text-center">
+                        <div class="flex-fill">
+                            <div class="step-dot"></div>
+                            <div class="step-active">Ordered</div>
+                            <small class="text-muted">Oct 20</small>
+                        </div>
+                        <div class="flex-fill">
+                            <div class="step-dot"></div>
+                            <div class="step-active">Shipped</div>
+                            <small class="text-muted">Oct 21</small>
+                        </div>
+                        <div class="flex-fill">
+                            <div class="step-dot" style="background-color: #dec1f3;"></div>
+                            <div class="step-inactive">Delivering</div>
+                            <small class="text-muted">Pending</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3">Price Details</h6>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Price (3 items)</span>
+                            <span>₹510</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Delivery Charges</span>
+                            <span class="text-success fw-bold">FREE</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-0">
+                            <h5 class="fw-bold">Total</h5>
+                            <h5 class="fw-bold" style="color: #9418be;">₹510</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
